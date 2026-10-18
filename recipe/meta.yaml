@@ -24,6 +24,8 @@ requirements:
     - python >={{ python_min }}
     - nannos >=2.6.4
     - scikit-image
+    - pyvista
+    - trame-pyvista  # pyvista[jupyter]: nannos sets the trame backend on import
 
 test:
   imports:
