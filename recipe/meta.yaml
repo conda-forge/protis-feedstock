@@ -1,5 +1,5 @@
 {% set name = "protis" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://gitlab.com/{{ name }}/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
-  sha256: d3f17b259eab525f4e8186e173fc3dea79f9ef7cacef6b63e16ab8a6a8a0461a
+  sha256: 38fe81e90d83c34376f7367cb0e83dc6b7703c48f82abec100465edd1c39062f
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
 
@@ -22,8 +22,10 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - nannos >=2.6.2
+    - nannos >=2.6.4
     - scikit-image
+    - pyvista
+    - trame-pyvista
 
 test:
   imports:
